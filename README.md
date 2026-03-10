@@ -1,240 +1,196 @@
 # Summit Climate Solutions — Website
 
-Built with Astro + Tailwind CSS by SiteForge.
+Built with Astro + Tailwind CSS. Ready for GitHub + Vercel deployment.
 
 ---
 
-## 1. Project Structure
-
-Here is where everything lives:
+## Project Structure
 
 ```
 summit-climate/
 ├── public/
-│   ├── favicon.svg          ← The small icon in the browser tab
-│   └── images/              ← All photos used on the website
+│   ├── images/          ← All photos go here
+│   └── favicon.svg      ← Logo/favicon
 ├── src/
-│   ├── components/          ← Reusable pieces (header, footer, etc.)
-│   ├── layouts/
-│   │   └── MainLayout.astro ← The base HTML wrapper for all pages
-│   └── pages/
-│       ├── index.astro      ← Home page
-│       ├── services.astro   ← Services page
-│       ├── about.astro      ← About page
-│       ├── contact.astro    ← Contact page
-│       └── thank-you.astro  ← Thank you page after form submit
-├── astro.config.mjs         ← Astro settings
-├── tailwind.config.mjs      ← Colors and fonts settings
-└── package.json             ← Project info and dependencies
+│   ├── components/      ← Reusable parts (Header, Footer, etc.)
+│   ├── layouts/         ← MainLayout.astro wraps all pages
+│   ├── pages/           ← index.astro, services.astro, about.astro, contact.astro, thank-you.astro
+│   └── styles/
+│       └── global.css   ← Colors, fonts, buttons
+├── astro.config.mjs
+├── tailwind.config.mjs
+└── package.json
 ```
 
 ---
 
-## 2. How to Change the Business Name
+## How to Run Locally
 
-The business name "Summit Climate Solutions" appears in several files.
+Step 1 — Install Node.js (if not installed): https://nodejs.org
 
-Step 1 — Open each of these files:
-- `src/components/Header.astro`
-- `src/components/Footer.astro`
-- `src/layouts/MainLayout.astro`
-- `src/pages/index.astro`
-- `src/pages/about.astro`
-- `src/pages/contact.astro`
-- `src/pages/thank-you.astro`
-
-Step 2 — Use your text editor's Find & Replace feature.
-- Find: `Summit Climate Solutions`
-- Replace with: the real business name
-
-Step 3 — Also find `Summit Climate` (shorter version) and replace it.
-
----
-
-## 3. How to Change Text Content
-
-All text is written directly inside the page files.
-
-**Home page hero text:**
-Open `src/pages/index.astro`
-Find the text "Air &" and "Heating" near the top — replace with what you want.
-
-**Services descriptions:**
-Open `src/pages/services.astro`
-Find the `services` array near the top of the file.
-Each service has: `name`, `short`, `description`, `problems`, `benefits`.
-Replace each piece with real content.
-
-**About page text:**
-Open `src/pages/about.astro`
-Find the paragraph sections and replace the text.
-
-**Contact information:**
-Open `src/components/Footer.astro` and `src/pages/contact.astro`
-Find the address, phone, and email and replace them.
-
----
-
-## 4. How to Change Phone Number
-
-The phone number appears in multiple places. Do a Find & Replace across all files.
-
-Find this visible format: `(480) 935-2176`
-Replace with: the real phone number in (XXX) XXX-XXXX format
-
-Find this clickable format: `tel:+14809352176`
-Replace with: `tel:+1XXXXXXXXXX` using the real number
-
-Files that contain the phone number:
-- `src/components/Header.astro`
-- `src/components/Footer.astro`
-- `src/components/GetStarted.astro`
-- `src/layouts/MainLayout.astro`
-- `src/pages/contact.astro`
-- `src/pages/thank-you.astro`
-
----
-
-## 5. How to Change the Email Address
-
-The contact form sends messages to: `roccify@gmail.com`
-
-Step 1 — Open `src/components/GetStarted.astro`
-Step 2 — Find: `https://formsubmit.co/roccify@gmail.com`
-Step 3 — Replace with: `https://formsubmit.co/REAL_EMAIL@domain.com`
-
-Do the same in:
-- `src/pages/contact.astro` (there are two forms on this page)
-
-Also update the email display text:
-Find: `info@summitclimateaz.com`
-Replace with the real email address.
-
----
-
-## 6. How to Replace Images
-
-All images are stored in: `public/images/`
-
-To replace an image:
-Step 1 — Find a new photo (recommended: JPEG, under 400KB)
-Step 2 — Rename it to match the existing filename exactly
-Step 3 — Copy it into `public/images/` and overwrite the old file
-
-**Important:** Keep the same filename. The website uses these exact names.
-
----
-
-## 7. Image Usage Map
-
-| File | Where It's Used | Recommended Size |
-|------|----------------|-----------------|
-| hero01.jpg | Home page hero section (right side) | 1920x1080 |
-| hero02.jpg | Services page hero section | 1920x1080 |
-| service01.jpg | AC Installation service section | 800x600 |
-| service02.jpg | AC Repair service section | 800x600 |
-| service03.jpg | HVAC Maintenance service section | 800x600 |
-| service04.jpg | Ductwork Inspection service section | 800x600 |
-| service05.jpg | Furnace Installation service section | 800x600 |
-| service06.jpg | Smart Thermostat service section | 800x600 |
-| about01.jpg | About page hero section | 1000x800 |
-| about02.jpg | About page story section | 1000x800 |
-| about03.jpg | About page service area section | 800x600 |
-| equipment01.jpg | Contact page hero section | 800x600 |
-| equipment02.jpg | Contact page map section | 800x600 |
-| equipment03.jpg | Reused where needed | 800x600 |
-| technician01.jpg | Reused where needed | 800x600 |
-
----
-
-## 8. How to Replace the Favicon
-
-The favicon is the small icon shown in the browser tab.
-
-**Current file location:** `public/favicon.svg`
-
-To replace it:
-Step 1 — Create a new favicon file. Recommended: SVG or PNG, 64x64 pixels minimum.
-Step 2 — Name it `favicon.svg` (or `favicon.png`)
-Step 3 — Copy it to the `public/` folder, overwriting the old file
-Step 4 — If you use PNG instead of SVG, open `src/layouts/MainLayout.astro` and change: `type="image/svg+xml"` to `type="image/png"`
-
-The current favicon is a simple "SC" monogram in navy blue (#1F4E79).
-
----
-
-## 9. About Client Customization
-
-When onboarding a real client, replace all of the following:
-
-| Item | Where to Change |
-|------|----------------|
-| Business name | All page files + Header + Footer |
-| Phone number | All page files + Header + Footer + Layout |
-| Email address | Footer + Contact page + GetStarted component |
-| Address | Footer + Contact page |
-| Services list | services.astro — the `services` array at the top |
-| About text | about.astro |
-| Service areas | about.astro + contact.astro |
-| Testimonials | index.astro — the testimonial slides section |
-| All images | public/images/ folder |
-| Favicon | public/favicon.svg |
-| Form email | GetStarted.astro + contact.astro |
-| Primary color | tailwind.config.mjs — change `brand.navy` value |
-
----
-
-## 10. Deployment Guide
-
-This project is ready to deploy to Vercel via GitHub.
-
-**Step 1 — Install dependencies locally (first time only):**
+Step 2 — Open a terminal in this folder and run:
 ```
 npm install
-```
-
-**Step 2 — Test locally:**
-```
 npm run dev
 ```
-Open your browser at: http://localhost:4321
 
-**Step 3 — Upload to GitHub:**
-- Go to github.com and create a new repository
-- Upload all project files to that repository
-
-**Step 4 — Connect to Vercel:**
-- Go to vercel.com and sign in
-- Click "Add New Project"
-- Select your GitHub repository
-- Click Deploy — Vercel detects Astro automatically
-
-**Step 5 — Update domain when ready:**
-- In Vercel dashboard, go to your project → Settings → Domains
-- Add the client's domain name
-
-**After that, the workflow is simple:**
-1. Edit files locally
-2. Push to GitHub
-3. Vercel redeploys automatically within 1-2 minutes
+Step 3 — Open your browser at: http://localhost:4321
 
 ---
 
-## 11. Colors
+## How to Change Business Name
 
-The main brand colors are defined in `tailwind.config.mjs`:
-
-| Color | Value | Used For |
-|-------|-------|---------|
-| brand-navy | #1F4E79 | Logo, headings, key UI elements |
-| brand-navydark | #0D2B4E | Main headings |
-| brand-navylight | #1565C0 | Hover states, gradients |
-| brand-orange | #E8914A | CTA buttons, accents |
-| brand-orangelight | #F0A050 | Button hover states, testimonials bg |
-| brand-bglight | #EEF4FB | Section backgrounds |
-
-To change the primary color, open `tailwind.config.mjs` and update these values.
+Open these files and replace "Summit Climate Solutions":
+- `src/components/Header.astro` — logo text
+- `src/components/Footer.astro` — brand name + copyright
+- `src/layouts/MainLayout.astro` — default page title
+- All `src/pages/*.astro` files — page titles and descriptions
 
 ---
 
-Website by [SiteForge](https://www.siteforgeonline.com)
+## How to Change Phone Number
+
+Search for `(480) 935-2176` across all files and replace with the new number.
+Search for `tel:+14809352176` and replace with the new tel: link.
+
+---
+
+## How to Change Email
+
+Search for `info@summitclimateaz.com` and replace.
+Search for `roccify@gmail.com` in the form action lines and replace with the real notification email.
+
+---
+
+## How to Change Address
+
+Search for `843 W Southern Ave` and replace.
+Also update the Google Maps link:
+`https://www.google.com/maps/search/?api=1&query=843+W+Southern+Ave+Mesa+AZ+85210`
+Replace the address part after `query=` with the new address (use + instead of spaces).
+
+---
+
+## How to Change Services
+
+Services are listed in:
+- `src/pages/index.astro` — homepage service cards
+- `src/pages/services.astro` — full service detail sections
+- `src/components/Header.astro` — navigation dropdown
+- `src/components/Footer.astro` — footer links
+
+---
+
+## How to Replace Images
+
+All images are in: `/public/images/`
+
+To replace an image:
+1. Find a new photo
+2. Rename it to match the existing filename exactly (example: `hero01.jpg`)
+3. Drop it into `/public/images/` and overwrite the old file
+
+### Image Usage Map
+
+| File | Used On | Recommended Size |
+|------|---------|-----------------|
+| hero01.jpg | Homepage hero (right side) | 1920x1080 |
+| hero02.jpg | Services page hero | 1920x1080 |
+| service01.jpg | AC Installation card + detail | 800x600 |
+| service02.jpg | AC Repair card + detail | 800x600 |
+| service03.jpg | HVAC Maintenance card + detail | 800x600 |
+| service04.jpg | Ductwork card + detail | 800x600 |
+| service05.jpg | Furnace card + detail | 800x600 |
+| service06.jpg | Smart Thermostat card + detail | 800x600 |
+| about01.jpg | About page hero | 1000x800 |
+| about02.jpg | About story grid | 800x600 |
+| about03.jpg | About story grid | 800x600 |
+| about04.jpg | About story grid | 800x600 |
+| about05.jpg | About story grid | 800x600 |
+| gallery01.jpg | Contact page hero | 1000x800 |
+| gallery02.jpg | Available for reuse | 800x600 |
+
+---
+
+## How to Replace the Favicon
+
+The favicon is at: `/public/favicon.svg`
+
+To replace it:
+1. Create a new SVG, PNG, or ICO file
+2. Name it `favicon.svg` (or update the link in `src/layouts/MainLayout.astro`)
+3. Drop it into `/public/`
+
+Recommended size: 64x64 pixels. SVG format works best.
+
+---
+
+## How to Add Google Map Embed
+
+In `src/pages/contact.astro`, find the map section.
+Replace the clickable link with an iframe embed from Google Maps:
+1. Go to Google Maps
+2. Search the business address
+3. Click Share → Embed a map
+4. Copy the iframe code
+5. Paste it in the map section
+
+---
+
+## How to Update Hours
+
+Search for `8:00 AM – 5:00 PM` and `Mon – Sat` across all files and update.
+
+---
+
+## Deployment Guide
+
+### Step 1 — Upload to GitHub
+1. Create a free account at github.com
+2. Click "New repository"
+3. Upload all project files
+4. Click "Commit changes"
+
+### Step 2 — Connect to Vercel
+1. Create a free account at vercel.com
+2. Click "Add New Project"
+3. Connect your GitHub account
+4. Select your repository
+5. Click "Deploy"
+
+### Step 3 — Done
+Vercel builds and deploys automatically.
+Every time you push changes to GitHub, Vercel redeploys.
+
+### Step 4 — Add Custom Domain
+In Vercel dashboard → Settings → Domains → Add your domain.
+
+---
+
+## What to Update for a Real Client
+
+When onboarding a real client, replace these:
+- [ ] Business name
+- [ ] Phone number
+- [ ] Email address
+- [ ] Physical address
+- [ ] Services (titles, descriptions, images)
+- [ ] About text
+- [ ] Service area cities
+- [ ] Testimonials (use real ones)
+- [ ] Photos (use real business photos)
+- [ ] Favicon (use real logo or monogram)
+- [ ] Google Map embed (use real location)
+- [ ] Business hours
+- [ ] FormSubmit email (the one that receives contact forms)
+- [ ] Social media links (Facebook, Instagram, Google, Yelp)
+- [ ] Certifications / license numbers
+
+---
+
+## Notes
+
+- Contact form sends to: `roccify@gmail.com` via FormSubmit.co
+- After form submission, user is redirected to `/thank-you`
+- Copyright year updates automatically — no manual changes needed
+- Footer includes "Website by SiteForge" credit linking to siteforgeonline.com
