@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&family=Heebo:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Open Sans', sans-serif;
+    color: #1a1a2e;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-orange {
+    @apply bg-brand-orange hover:bg-brand-orangelight text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:shadow-lg inline-block;
+  }
+  .btn-outline {
+    @apply border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 inline-block;
+  }
+  .btn-outline-white {
+    @apply border-2 border-white text-white hover:bg-white hover:text-brand-navy font-semibold px-6 py-3 rounded-full transition-all duration-200 inline-block;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-brand-navydark font-heading;
+  }
+  .section-subtitle {
+    @apply text-gray-500 mt-2 text-base;
+  }
+}
+
+/* Dropdown nav */
+.nav-dropdown {
+  display: none;
+}
+.nav-item:hover .nav-dropdown {
+  display: block;
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+.fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+.fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+.fade-up-delay-3 { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+
+/* Hero diagonal background */
+.hero-bg {
+  background: linear-gradient(135deg, #EEF4FB 0%, #F5F9FF 40%, #DDEEFF 100%);
+}
+
+/* Diagonal section divider */
+.diagonal-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.diagonal-top {
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}

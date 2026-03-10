@@ -1,0 +1,133 @@
+---
+const services = [
+  { name: 'AC Installation', href: '/services#ac-installation' },
+  { name: 'AC Repair', href: '/services#ac-repair' },
+  { name: 'HVAC Maintenance', href: '/services#hvac-maintenance' },
+  { name: 'Ductwork Inspection', href: '/services#ductwork' },
+  { name: 'Furnace Installation', href: '/services#furnace' },
+  { name: 'Smart Thermostat', href: '/services#smart-thermostat' },
+];
+---
+
+<header id="site-header" class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+
+      <a href="/" class="flex items-center gap-3 flex-shrink-0">
+        <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="10" fill="#1F4E79"/>
+          <text x="32" y="44" font-family="Poppins, sans-serif" font-size="26" font-weight="700" text-anchor="middle" fill="white">SC</text>
+        </svg>
+        <div class="leading-tight">
+          <span class="block font-heading font-bold text-brand-navydark text-base leading-none">Summit Climate</span>
+          <span class="block font-body text-xs text-gray-400 tracking-wide">Solutions</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="/" class="font-body text-sm font-semibold text-gray-700 hover:text-brand-navy transition-colors">Home</a>
+
+        <div class="nav-item relative">
+          <a href="/services" class="font-body text-sm font-semibold text-gray-700 hover:text-brand-navy transition-colors flex items-center gap-1">
+            Services
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="nav-dropdown absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
+            {services.map(s => (
+              <a href={s.href} class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-bglight hover:text-brand-navy transition-colors font-body">{s.name}</a>
+            ))}
+          </div>
+        </div>
+
+        <a href="/about" class="font-body text-sm font-semibold text-gray-700 hover:text-brand-navy transition-colors">About</a>
+        <a href="/contact" class="font-body text-sm font-semibold text-gray-700 hover:text-brand-navy transition-colors">Contact</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="tel:+14809352176" class="font-body text-sm font-semibold text-brand-navy flex items-center gap-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          (480) 935-2176
+        </a>
+        <a href="/contact" class="btn-orange text-sm px-5 py-2.5">Request Service</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-brand-navy" aria-label="Open menu">
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-4 space-y-1">
+      <a href="/" class="block py-3 font-body font-semibold text-gray-700 border-b border-gray-100">Home</a>
+
+      <div>
+        <button id="mobile-services-btn" class="w-full flex items-center justify-between py-3 font-body font-semibold text-gray-700 border-b border-gray-100">
+          Services
+          <svg id="mobile-services-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div id="mobile-services-list" class="hidden pl-4 space-y-1 pb-2">
+          <a href="/services" class="block py-2 text-sm text-brand-navy font-semibold font-body">All Services</a>
+          {services.map(s => (
+            <a href={s.href} class="block py-2 text-sm text-gray-600 font-body hover:text-brand-navy">{s.name}</a>
+          ))}
+        </div>
+      </div>
+
+      <a href="/about" class="block py-3 font-body font-semibold text-gray-700 border-b border-gray-100">About</a>
+      <a href="/contact" class="block py-3 font-body font-semibold text-gray-700 border-b border-gray-100">Contact</a>
+
+      <div class="pt-4 pb-2">
+        <a href="tel:+14809352176" class="flex items-center gap-2 text-brand-navy font-semibold font-body text-sm mb-3">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          Call Now — (480) 935-2176
+        </a>
+        <a href="/contact" class="btn-orange w-full text-center text-sm block">Request Service</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const phoneBar = document.getElementById('mobile-phone-bar');
+  const servicesBtn = document.getElementById('mobile-services-btn');
+  const servicesList = document.getElementById('mobile-services-list');
+  const servicesArrow = document.getElementById('mobile-services-arrow');
+
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    if (isOpen) {
+      mobileMenu?.classList.add('hidden');
+      hamburgerIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+      if (phoneBar) (phoneBar as HTMLElement).style.display = 'flex';
+    } else {
+      mobileMenu?.classList.remove('hidden');
+      hamburgerIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+      if (phoneBar) (phoneBar as HTMLElement).style.display = 'none';
+    }
+  });
+
+  servicesBtn?.addEventListener('click', () => {
+    const isOpen = !servicesList?.classList.contains('hidden');
+    if (isOpen) {
+      servicesList?.classList.add('hidden');
+      servicesArrow?.classList.remove('rotate-180');
+    } else {
+      servicesList?.classList.remove('hidden');
+      servicesArrow?.classList.add('rotate-180');
+    }
+  });
+</script>

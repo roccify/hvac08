@@ -1,0 +1,137 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import GetStarted from '../components/GetStarted.astro';
+---
+<MainLayout title="Summit Climate Solutions | HVAC Mesa, AZ" description="Licensed HVAC specialists in Mesa, AZ. AC installation, repair, maintenance and more. Serving Mesa, Gilbert, Chandler, Tempe, and Queen Creek.">
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-[85vh] flex items-center relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
+      <div class="fade-up">
+        <h1 class="text-5xl lg:text-6xl font-heading font-bold text-brand-navydark leading-tight mb-4">
+          Air &amp; <br/><span class="text-brand-navy">Heating</span><br/>Experts
+        </h1>
+        <p class="text-gray-500 font-body text-base mb-8 max-w-md leading-relaxed">
+          Licensed HVAC specialists providing prompt diagnostics, energy-efficient systems, and transparent service for Arizona homes and businesses.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/contact" class="btn-orange">Request Service</a>
+          <a href="/services" class="btn-outline">View Services</a>
+        </div>
+      </div>
+      <div class="hidden lg:flex justify-center items-center fade-up fade-up-delay-2">
+        <img src="/images/hero01.jpg" alt="HVAC unit installed outside residential property in Mesa, AZ" class="rounded-2xl shadow-2xl object-cover w-full max-h-[480px]" />
+      </div>
+    </div>
+    <!-- Diagonal bottom -->
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-white" style="clip-path: polygon(0 100%, 100% 0, 100% 100%)"></div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="mb-12">
+        <h2 class="section-title">HVAC Services</h2>
+        <p class="section-subtitle">Professional heating and cooling solutions designed for Arizona's climate.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { title: 'AC Installation', desc: 'Install a high-efficiency AC system designed to handle extreme summer temperatures and reduce energy costs.', img: '/images/service01.jpg', href: '/services#ac-installation', icon: '❄️' },
+          { title: 'AC Repair', desc: 'Same-day AC repair services to restore cooling and prevent costly breakdowns before they get worse.', img: '/images/service02.jpg', href: '/services#ac-repair', icon: '🔧' },
+          { title: 'HVAC Maintenance', desc: 'Routine HVAC tune-ups that reduce breakdowns and keep systems running efficiently year-round.', img: '/images/service03.jpg', href: '/services#hvac-maintenance', icon: '✅' },
+        ].map(s => (
+          <div class="bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col">
+            <div class="h-40 overflow-hidden rounded-t-xl">
+              <img src={s.img} alt={s.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="w-12 h-12 rounded-full border-2 border-brand-orange flex items-center justify-center text-2xl mb-4">{s.icon}</div>
+              <h3 class="font-heading font-bold text-brand-navydark text-lg mb-2">{s.title}</h3>
+              <p class="text-gray-500 font-body text-sm leading-relaxed flex-1">{s.desc}</p>
+              <a href={s.href} class="mt-4 text-brand-orange font-semibold font-body text-sm hover:underline uppercase tracking-wide">Learn More →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        {[
+          { title: 'Ductwork Inspection', desc: 'Identify airflow leaks and seal duct systems to improve cooling efficiency across your property.', img: '/images/service04.jpg', href: '/services#ductwork', icon: '🌬️' },
+          { title: 'Furnace Installation', desc: 'Upgrade outdated heating systems with efficient furnace installation built for Arizona winters.', img: '/images/service05.jpg', href: '/services#furnace', icon: '🔥' },
+          { title: 'Smart Thermostat', desc: 'Upgrade to a smart thermostat for automated temperature control and energy savings year-round.', img: '/images/service06.jpg', href: '/services#smart-thermostat', icon: '📱' },
+        ].map(s => (
+          <div class="bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col">
+            <div class="h-40 overflow-hidden rounded-t-xl">
+              <img src={s.img} alt={s.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="w-12 h-12 rounded-full border-2 border-brand-orange flex items-center justify-center text-2xl mb-4">{s.icon}</div>
+              <h3 class="font-heading font-bold text-brand-navydark text-lg mb-2">{s.title}</h3>
+              <p class="text-gray-500 font-body text-sm leading-relaxed flex-1">{s.desc}</p>
+              <a href={s.href} class="mt-4 text-brand-orange font-semibold font-body text-sm hover:underline uppercase tracking-wide">Learn More →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & VALUES (split blue left / feature list right) -->
+  <section class="py-0 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-xl">
+        <!-- Left: Blue box -->
+        <div class="bg-gradient-to-br from-brand-navydark to-brand-formblue p-12 flex flex-col justify-center">
+          <h2 class="text-3xl font-heading font-bold text-white mb-4">Our Mission<br/>&amp; <span class="text-brand-orangelight">Values</span></h2>
+          <p class="text-white/80 font-body text-sm leading-relaxed">Summit Climate Solutions provides reliable HVAC services for homes and businesses across Mesa. Since 2011, we have focused on energy-efficient systems designed for Arizona's extreme temperatures.</p>
+        </div>
+        <!-- Right: Feature list -->
+        <div class="bg-white p-12 flex flex-col justify-center gap-6">
+          {[
+            { icon: '🛡️', title: 'Licensed & Insured', desc: 'Arizona ROC License #318204. EPA Section 608 Certified. Full general liability coverage.' },
+            { icon: '💰', title: 'Fair, Transparent Pricing', desc: 'Free quotes on all services. Flat-rate service calls with no hidden fees.' },
+            { icon: '⚡', title: 'Fast & Responsive', desc: 'Same-day AC repair available. We respond quickly because Arizona heat waits for no one.' },
+            { icon: '🏆', title: 'Satisfaction Guaranteed', desc: 'In-house technicians only. No subcontractors. Consistent quality on every job.' },
+          ].map(f => (
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full border-2 border-brand-orange flex items-center justify-center text-lg flex-shrink-0">{f.icon}</div>
+              <div>
+                <h4 class="font-heading font-bold text-brand-navydark text-sm mb-1">{f.title}</h4>
+                <p class="font-body text-gray-500 text-xs leading-relaxed">{f.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (orange background) -->
+  <section class="py-20 mt-16" style="background: linear-gradient(135deg, #E8914A 0%, #F0A050 100%);">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-heading font-bold text-white mb-10">Testimonials</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { quote: "Summit Climate installed a new AC system in our home and we couldn't be happier. The technician was professional, explained everything clearly, and the installation was clean and done on time.", name: 'David R.', location: 'Mesa, AZ', stars: '★★★★★' },
+          { quote: "Our AC broke in the middle of July. Summit Climate came out the same day and had it running again within a few hours. Fair price, honest diagnosis. These are our go-to HVAC guys.", name: 'Lisa M.', location: 'Gilbert, AZ', stars: '★★★★★' },
+          { quote: "We signed up for their maintenance plan for our commercial building. The technicians are thorough and the documentation they provide is excellent. Highly recommend for commercial properties.", name: 'Marcus T.', location: 'Chandler, AZ', stars: '★★★★★' },
+          { quote: "Had my furnace replaced last winter. The team was on time, professional, and the price was fair. They also installed a smart thermostat and walked me through the app setup. Great experience.", name: 'Sandra K.', location: 'Tempe, AZ', stars: '★★★★★' },
+        ].map(t => (
+          <div class="bg-white/15 rounded-xl p-6 text-left">
+            <p class="text-white font-body text-sm leading-relaxed mb-4 italic">"{t.quote}"</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-white font-heading font-bold text-sm">{t.name}</p>
+                <p class="text-white/70 text-xs font-body">{t.location}</p>
+              </div>
+              <span class="text-yellow-200 text-sm">{t.stars}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GET STARTED -->
+  <GetStarted />
+
+</MainLayout>

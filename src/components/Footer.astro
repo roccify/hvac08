@@ -1,0 +1,90 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <a href="/" class="flex items-center gap-3 mb-4">
+          <svg width="36" height="36" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="10" fill="#1F4E79"/>
+            <text x="32" y="44" font-family="Poppins, sans-serif" font-size="26" font-weight="700" text-anchor="middle" fill="white">SC</text>
+          </svg>
+          <div>
+            <span class="block font-heading font-bold text-white text-sm leading-none">Summit Climate</span>
+            <span class="block text-xs text-gray-400">Solutions</span>
+          </div>
+        </a>
+        <p class="text-gray-400 text-sm font-body leading-relaxed">Licensed HVAC specialists serving Mesa and surrounding communities since 2011.</p>
+        <div class="flex gap-3 mt-5">
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="w-8 h-8 bg-gray-700 hover:bg-brand-navy rounded-full flex items-center justify-center transition-colors" aria-label="Facebook">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="w-8 h-8 bg-gray-700 hover:bg-brand-navy rounded-full flex items-center justify-center transition-colors" aria-label="Instagram">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://google.com" target="_blank" rel="noopener" class="w-8 h-8 bg-gray-700 hover:bg-brand-navy rounded-full flex items-center justify-center transition-colors" aria-label="Google">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z"/></svg>
+          </a>
+          <a href="https://yelp.com" target="_blank" rel="noopener" class="w-8 h-8 bg-gray-700 hover:bg-brand-navy rounded-full flex items-center justify-center transition-colors" aria-label="Yelp">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.16 12.73l-4.46 1.223c-.96.266-1.73-.8-1.18-1.64l2.5-3.84c.55-.845 1.79-.604 2.01.38l.94 4.11c.11.48-.27.89-.75.77zM11.5 17.53l-.34 4.61c-.07.96-1.24 1.31-1.83.56L6.78 19.6c-.59-.75-.07-1.83.87-1.83h3.07c.47 0 .82.41.78.76zm5.79.74l-3.37 3.05c-.73.66-1.82.1-1.79-.88l.14-4.63c.03-.97 1.17-1.42 1.82-.72l3.23 3.55c.37.4.3 1.02-.03 1.63zM8.11 13.4L3.51 14.2c-.95.16-1.54-.88-1-1.7l2.97-4.34c.54-.79 1.76-.56 1.97.37l1.08 4.16c.14.53-.32 1.03-.42.71zM12 8.03V3.37c0-.97 1.15-1.4 1.82-.7l3.47 3.84c.67.74.22 1.89-.75 1.82L12.72 8.1c-.38-.03-.72-.22-.72-.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-heading font-bold text-white mb-4 text-sm uppercase tracking-wider">Our Services</h4>
+        <ul class="space-y-2">
+          <li><a href="/services#ac-installation" class="text-gray-400 hover:text-white text-sm font-body transition-colors">AC Installation</a></li>
+          <li><a href="/services#ac-repair" class="text-gray-400 hover:text-white text-sm font-body transition-colors">AC Repair</a></li>
+          <li><a href="/services#hvac-maintenance" class="text-gray-400 hover:text-white text-sm font-body transition-colors">HVAC Maintenance</a></li>
+          <li><a href="/services#ductwork" class="text-gray-400 hover:text-white text-sm font-body transition-colors">Ductwork Inspection</a></li>
+          <li><a href="/services#furnace" class="text-gray-400 hover:text-white text-sm font-body transition-colors">Furnace Installation</a></li>
+          <li><a href="/services#smart-thermostat" class="text-gray-400 hover:text-white text-sm font-body transition-colors">Smart Thermostat</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-heading font-bold text-white mb-4 text-sm uppercase tracking-wider">Contact Us</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            <a href="tel:+14809352176" class="text-gray-400 hover:text-white text-sm font-body transition-colors">(480) 935-2176</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+            <a href="mailto:info@summitclimateaz.com" class="text-gray-400 hover:text-white text-sm font-body transition-colors">info@summitclimateaz.com</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+            <span class="text-gray-400 text-sm font-body">843 W Southern Ave<br/>Mesa, AZ 85210</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-heading font-bold text-white mb-4 text-sm uppercase tracking-wider">Business Hours</h4>
+        <ul class="space-y-2">
+          <li class="flex justify-between text-sm font-body">
+            <span class="text-gray-400">Mon – Sat</span>
+            <span class="text-white font-medium">8:00 AM – 5:00 PM</span>
+          </li>
+          <li class="flex justify-between text-sm font-body">
+            <span class="text-gray-400">Sunday</span>
+            <span class="text-gray-500">Closed</span>
+          </li>
+        </ul>
+        <div class="mt-6">
+          <p class="text-xs text-gray-500 font-body mb-1">AZ ROC License #318204</p>
+          <p class="text-xs text-gray-500 font-body">EPA Section 608 Certified</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <p class="text-gray-500 text-xs font-body">© {currentYear} Summit Climate Solutions. All rights reserved.</p>
+      <p class="text-gray-600 text-xs font-body">Website by <a href="https://www.siteforgeonline.com" target="_blank" rel="noopener" class="text-gray-500 hover:text-gray-300 transition-colors">SiteForge</a></p>
+    </div>
+  </div>
+</footer>

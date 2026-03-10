@@ -1,0 +1,180 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import GetStarted from '../components/GetStarted.astro';
+
+const services = [
+  {
+    id: 'ac-installation',
+    name: 'Air Conditioning Installation',
+    tagline: 'High-efficiency AC systems built for Arizona heat.',
+    img: '/images/service01.jpg',
+    desc: 'Our technicians install modern central air conditioning systems using high-efficiency equipment suitable for Arizona\'s climate. Each installation includes system sizing calculations, ductwork evaluation, and post-installation performance testing to ensure reliable cooling throughout the property.',
+    problems: ['Old AC system cannot keep up with summer heat', 'Uneven cooling between rooms', 'High electricity bills from outdated units'],
+    benefits: ['Lower cooling costs with efficient equipment', 'Consistent cooling across the entire property', 'Manufacturer-backed installation warranties'],
+    icon: '❄️',
+  },
+  {
+    id: 'ac-repair',
+    name: 'Air Conditioning Repair',
+    tagline: 'Fast diagnostics and same-day repairs.',
+    img: '/images/service02.jpg',
+    desc: 'Our HVAC technicians diagnose and repair air conditioning problems using professional diagnostic tools and manufacturer-approved parts. Services include refrigerant leak detection, electrical component replacement, airflow troubleshooting, and system performance checks.',
+    problems: ['AC blowing warm air', 'System not turning on', 'Loud noises or frequent cycling'],
+    benefits: ['Rapid diagnosis and effective repairs', 'Prevents larger system failures', 'Extends system lifespan'],
+    icon: '🔧',
+  },
+  {
+    id: 'hvac-maintenance',
+    name: 'HVAC Maintenance Plans',
+    tagline: 'Preventive care for year-round performance.',
+    img: '/images/service03.jpg',
+    desc: 'Maintenance plans include scheduled inspections, system cleaning, performance testing, and filter replacement. Regular maintenance helps maintain system efficiency, improves indoor comfort, and reduces the risk of unexpected equipment failure.',
+    problems: ['Unexpected HVAC breakdowns', 'Declining cooling performance', 'Higher energy consumption'],
+    benefits: ['Fewer emergency repairs', 'Longer system lifespan', 'Improved comfort and efficiency'],
+    icon: '✅',
+  },
+  {
+    id: 'ductwork',
+    name: 'Ductwork Inspection & Sealing',
+    tagline: 'Better airflow. Lower energy bills.',
+    img: '/images/service04.jpg',
+    desc: 'Our technicians inspect duct systems for leaks, poor insulation, and airflow restrictions. Using professional sealing techniques and airflow testing, we improve system efficiency and balance air distribution throughout the property.',
+    problems: ['Rooms that are too hot or too cold', 'Excess dust in the home', 'Higher than expected energy bills'],
+    benefits: ['Balanced airflow between rooms', 'Lower energy consumption', 'Improved indoor comfort'],
+    icon: '🌬️',
+  },
+  {
+    id: 'furnace',
+    name: 'Furnace Installation & Replacement',
+    tagline: 'Reliable heating for cooler desert months.',
+    img: '/images/service05.jpg',
+    desc: 'We install high-efficiency furnaces designed for reliable heating during cooler desert months. Installations include safety checks, combustion testing, thermostat integration, and proper duct system connection.',
+    problems: ['Old furnace not heating efficiently', 'Frequent ignition or pilot issues', 'Increasing winter heating costs'],
+    benefits: ['Reliable heating during cooler seasons', 'Lower operating costs', 'Safe and compliant installation'],
+    icon: '🔥',
+  },
+  {
+    id: 'smart-thermostat',
+    name: 'Smart Thermostat Installation',
+    tagline: 'Automated control and real energy savings.',
+    img: '/images/service06.jpg',
+    desc: 'Our technicians install and configure smart thermostats such as Nest and Ecobee. The service includes system compatibility checks, wiring installation, Wi-Fi configuration, and guidance on using energy-saving scheduling features.',
+    problems: ['Outdated manual thermostat', 'Difficulty programming temperature schedules', 'Lack of remote temperature control'],
+    benefits: ['Improved comfort through automated scheduling', 'Reduced energy consumption', 'Remote access via mobile apps'],
+    icon: '📱',
+  },
+];
+---
+<MainLayout title="HVAC Services | Summit Climate Solutions Mesa, AZ" description="AC installation, repair, maintenance, ductwork, furnace, and smart thermostat services in Mesa, Gilbert, Chandler, and Tempe, AZ.">
+
+  <!-- PAGE HERO -->
+  <section class="hero-bg py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="hidden lg:block">
+        <img src="/images/hero02.jpg" alt="HVAC technician servicing an air conditioning unit" class="rounded-2xl shadow-xl object-cover w-full max-h-96" />
+      </div>
+      <div>
+        <h1 class="text-5xl font-heading font-bold text-brand-navydark leading-tight mb-4">Our<br/><span class="text-brand-navy">Services</span></h1>
+        <p class="text-gray-500 font-body mb-6">Professional HVAC services for residential and commercial properties across Mesa and surrounding communities.</p>
+        <a href="/contact" class="btn-orange mr-3">Request Service</a>
+        <a href="tel:+14809352176" class="inline-flex items-center gap-2 text-brand-navy font-semibold font-body text-sm mt-3">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          (480) 935-2176
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO split section -->
+  <section class="py-0 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-lg mt-8">
+        <div class="bg-brand-orange p-10 flex flex-col justify-center">
+          <h2 class="text-3xl font-heading font-bold text-white mb-3">What <span class="font-black">We Do</span></h2>
+          <p class="text-white/85 font-body text-sm leading-relaxed">Summit Climate Solutions provides complete HVAC services for homes and businesses in Mesa and the surrounding East Valley. Our in-house licensed technicians handle every job from start to finish.</p>
+        </div>
+        <div class="bg-white p-10 flex flex-col justify-center gap-5">
+          {[
+            { icon: '❄️', title: 'Cooling', desc: 'AC installation, repair, and maintenance for residential and commercial properties.' },
+            { icon: '🔥', title: 'Heating', desc: 'Furnace installation and replacement designed for Arizona\'s cooler months.' },
+            { icon: '🌬️', title: 'Ductwork', desc: 'Duct inspection, sealing, and airflow balancing for improved efficiency.' },
+          ].map(f => (
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full border-2 border-brand-orange flex items-center justify-center text-lg flex-shrink-0">{f.icon}</div>
+              <div>
+                <h4 class="font-heading font-bold text-brand-navydark text-sm mb-1">{f.title}</h4>
+                <p class="text-gray-500 font-body text-xs">{f.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE DETAIL SECTIONS -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="bg-brand-bglighter rounded-2xl p-8 lg:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map(s => (
+            <a href={`#${s.id}`} class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow text-center flex flex-col items-center">
+              <div class="w-14 h-14 rounded-full border-2 border-brand-orange flex items-center justify-center text-2xl mb-3">{s.icon}</div>
+              <h3 class="font-heading font-bold text-brand-navydark text-sm mb-1">{s.name}</h3>
+              <p class="text-gray-400 text-xs font-body text-center">{s.tagline}</p>
+              <span class="mt-3 text-brand-orange text-xs font-semibold font-body uppercase tracking-wide">Learn More →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Individual Service Sections -->
+  {services.map((s, i) => (
+    <section id={s.id} class={`py-16 scroll-mt-24 ${i % 2 === 0 ? 'bg-white' : 'bg-brand-bglighter'}`}>
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+          <div class={i % 2 !== 0 ? 'lg:order-2' : ''}>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full border-2 border-brand-orange flex items-center justify-center text-lg">{s.icon}</div>
+              <span class="text-brand-orange font-body text-xs font-semibold uppercase tracking-widest">HVAC Service</span>
+            </div>
+            <h2 class="text-3xl font-heading font-bold text-brand-navydark mb-3">{s.name}</h2>
+            <p class="text-gray-500 font-body text-sm leading-relaxed mb-6">{s.desc}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <h4 class="font-heading font-bold text-brand-navydark text-sm mb-3">Common Problems</h4>
+                <ul class="space-y-2">
+                  {s.problems.map(p => (
+                    <li class="flex items-start gap-2 text-sm text-gray-500 font-body">
+                      <span class="text-red-400 mt-0.5">✗</span>{p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-brand-navydark text-sm mb-3">Customer Benefits</h4>
+                <ul class="space-y-2">
+                  {s.benefits.map(b => (
+                    <li class="flex items-start gap-2 text-sm text-gray-500 font-body">
+                      <span class="text-green-500 mt-0.5">✓</span>{b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <a href="/contact" class="btn-orange text-sm">Request Service</a>
+          </div>
+          <div class={i % 2 !== 0 ? 'lg:order-1' : ''}>
+            <img src={s.img} alt={s.name} class="rounded-2xl shadow-xl object-cover w-full h-72 lg:h-96" />
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- GET STARTED -->
+  <GetStarted />
+
+</MainLayout>
